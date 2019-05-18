@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+<script>
+    var meuArray = [];
+
+    function adicionar() {
+        var valor = document.getElementById('valor').value;
+        meuArray.push(valor);
+        document.getElementById('valor').value = '';
+    }
+
+    function exibir() {
+        var saida = document.getElementById('dados');
+
+        var stringSaida = '';
+        for(var i = 0; i < meuArray.length; i++){
+            stringSaida = stringSaida + meuArray[i] + '<br>';
+        }
+
+        saida.innerHTML = stringSaida;
+    }
+
+</script>
+</head>
+<body>
+<form onsubmit="return false;">
+    <input type="text" id="valor"><br>
+    <button onclick="adicionar();">Adicionar</button>
+    <button onclick="exibir();">Exibir</button>
+</form>
+<div id="dados"></div>
+</body>
+</html>
